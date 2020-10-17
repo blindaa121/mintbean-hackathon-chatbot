@@ -152,22 +152,22 @@ a.button:hover {
   padding: 0.25rem;
   display: block;
 }
-#message_window .powered_by {
+/* #message_window .powered_by {
   flex-shrink: 0;
   text-align: center;
   border-bottom: 1px solid #CCC;
   font-size: 14px;
   padding: 0.25rem;
   color: #666;
-}
-#message_window .powered_by a {
+} */
+/* #message_window .powered_by a {
   text-decoration: none;
   color: #666;
-}
-#message_window .powered_by img {
+} */
+/* #message_window .powered_by img {
   position: relative;
   top: 2px;
-}
+} */
 #message_window section {
   flex-grow: 1;
   flex-direction: column-reverse;
