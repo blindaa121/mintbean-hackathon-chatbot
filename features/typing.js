@@ -32,7 +32,7 @@ module.exports = function(controller) {
         await bot.beginDialog('typing');
     });
 
-    controller.hears('typing reply', 'message', async (bot, message) => {
+    controller.on('message', async (bot, message) => {
 
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
