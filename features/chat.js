@@ -17,22 +17,38 @@ module.exports = function(controller) {
             quick_replies: [
                 {
                     title: 'Dorian',
-                    payload: 'dorian'
+                    payload: 'Dorian'
                 },
                 {
                     title: 'Ngoc',
-                    payload: 'ngoc'
+                    payload: 'Ngoc'
                 },
                 {
                     title: 'Bryan',
-                    payload: 'bryan'
+                    payload: 'Bryan'
                 },
             ]
         })
     })
 
     controller.on('welcome_back', async(bot, message) => {
-        await bot.reply(message, 'Welcome Back!')
+        await bot.reply(message, {
+            text: 'Welcome back! We have three talented developers at your fingertips. Who would you like to hire? (or you can hire all of us)',
+            quick_replies: [
+                {
+                    title: 'Dorian',
+                    payload: 'Dorian'
+                },
+                {
+                    title: 'Ngoc',
+                    payload: 'Ngoc'
+                },
+                {
+                    title: 'Bryan',
+                    payload: 'Bryan'
+                },
+            ]
+        });
     })
 
     console.log('Chat with me: http://localhost:' + (process.env.PORT || 3000));
