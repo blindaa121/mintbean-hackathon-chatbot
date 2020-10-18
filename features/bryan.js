@@ -95,10 +95,6 @@ module.exports = function(controller) {
                         "Javascript"
                         ]
                     }],
-                    "languages": [{
-                        "language": "English",
-                        "fluency": "Native speaker"
-                    }],
                     "interests": [{
                         "name": "Wildlife",
                         "keywords": [
@@ -129,6 +125,11 @@ module.exports = function(controller) {
         }
     ))
 
+    const bryansContactInfo = {
+        email: bryansResume.basics.email,
+        phone: bryansResume.basics.phone
+    }
+
     controller.hears('Bryan', 'message,direct_message',
         async(bot, message) => {
             await bot.reply(message, 
@@ -144,6 +145,10 @@ module.exports = function(controller) {
                             payload: 'Education'
                         },
                         {
+                            title: 'Projects',
+                            payload: 'Projects'
+                        },
+                        {
                             title: 'Tech Stack',
                             payload: 'Tech Stack'
                         },
@@ -153,7 +158,7 @@ module.exports = function(controller) {
                         },
                     ]
                 });
-    });
+        });
 
     controller.hears('work experience', 'message,direct_message',
         async(bot, message) => {
@@ -170,6 +175,37 @@ module.exports = function(controller) {
                 {
                     text: 'Here is a list of schools that I have studied at',
                     quick_replies: bryansEducation
+                })
+        }
+    )
+
+    controller.hears('contact', 'message,direct_message',
+        async(bot, message) => {
+            await bot.reply(message,
+                {
+                    text: 'Feel free to contact me via phone, email, or online profiles!',
+                    quick_replies: [
+                        {
+                            title: 'Phone',
+                            payload: 'phone'
+                        },
+                        {
+                            title: 'Email',
+                            payload: 'email'
+                        },
+                        {
+                            title: 'LinkedIn',
+                            payload: 'LinkedIn'
+                        },
+                        {
+                            title: 'GitHub',
+                            payload: 'GitHub'
+                        },
+                        {
+                            title: 'AngelList',
+                            payload: 'AngelList'
+                        }
+                ]
                 })
         }
     )
